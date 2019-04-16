@@ -1,0 +1,9 @@
+<p>
+  video-list works!
+
+
+
+</p>
+
+<app-video-list-item *ngFor="let video of videos" (click)="selectVideo(video)"
+  [class.highlight]="video === selectedVideo" class="card-panel" [video]="video"></app-video-list-item>

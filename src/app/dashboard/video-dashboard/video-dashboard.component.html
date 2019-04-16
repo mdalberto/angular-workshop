@@ -1,0 +1,4 @@
+
+<app-stat-filters class="card-panel"></app-stat-filters>
+<app-video-list class="card-panel" [videos]="videosList" (whichVideo)="setWhichVideo($event)"></app-video-list>
+<app-video-player class="card-panel" [setWhichVideo]="whichVideo" ></app-video-player>
