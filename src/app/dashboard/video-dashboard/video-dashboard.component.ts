@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { Video } from '../dashboard-types';
 
@@ -197,7 +198,7 @@ const videos: Video[] = [
 })
 export class VideoDashboardComponent implements OnInit {
 
-  videosList: Video[] = videos;
+  videosList: Video[] = [];
   whichVideo: Video;
 
   setWhichVideo(video: Video){
@@ -205,7 +206,11 @@ export class VideoDashboardComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(http: HttpClient) {
+        http
+          .get<Video[]>('https://api.angularbootcamp.com/videos')
+          .subscribe(vids => this.videosList = vids);
+      }
 
   ngOnInit() {
   }

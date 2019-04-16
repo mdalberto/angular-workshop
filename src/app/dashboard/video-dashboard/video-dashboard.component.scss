@@ -1,7 +1,16 @@
 :host {
 
-display:flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  // :not(:last-child) {
+  //   margin-right: 10px;
+  // }
 
+  * {
+    width: 332%;
+
+    padding: 20px;
+  }
 
 }
